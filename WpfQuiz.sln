@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfQuiz", "WpfQuiz\WpfQuiz.csproj", "{434DCD29-7DCF-4884-B2B3-C955B915FB4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{434DCD29-7DCF-4884-B2B3-C955B915FB4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434DCD29-7DCF-4884-B2B3-C955B915FB4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434DCD29-7DCF-4884-B2B3-C955B915FB4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434DCD29-7DCF-4884-B2B3-C955B915FB4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EA400E0-BD7C-48F0-861D-0883ADEBABE0}
+	EndGlobalSection
+EndGlobal
