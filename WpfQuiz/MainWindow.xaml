@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfQuiz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Button x:Name="testButton" Click="testButton_Click" Content="Test Button" Width="200" Height="48" />
+        Title="MainWindow" Height="417.775" Width="525">
+    <Grid Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="193*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="259*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Willkommen zum Quiz!" HorizontalAlignment="Left" Height="34" Margin="152,10,0,0" VerticalAlignment="Top" Width="214" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <Label Content="Anmelden:" HorizontalAlignment="Left" Height="28" Margin="80,78,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
+        <Label Content="Registrieren:" HorizontalAlignment="Left" Height="28" Margin="59,78,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <Label Content="Benutzername:" HorizontalAlignment="Left" Height="28" Margin="80,111,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="80,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Grid.ColumnSpan="2"/>
+        <Label Content="Benutzername:" HorizontalAlignment="Left" Height="28" Margin="59,111,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="59,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Grid.Column="2"/>
+        <Label Content="Passwort:" HorizontalAlignment="Left" Height="28" Margin="59,173,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <Label Content="Passwort:" HorizontalAlignment="Left" Height="28" Margin="80,173,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
+        <Label Content="Passwort erneut eingeben:" HorizontalAlignment="Left" Height="28" Margin="59,239,0,0" VerticalAlignment="Top" Width="152" Grid.Column="2"/>
+        <PasswordBox HorizontalAlignment="Left" Height="19" Margin="80,206,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
+        <PasswordBox HorizontalAlignment="Left" Height="19" Margin="59,267,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <PasswordBox HorizontalAlignment="Left" Height="19" Margin="59,206,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
+        <Button Grid.ColumnSpan="3" Content="Weiter" HorizontalAlignment="Left" Height="32" Margin="183,328,0,0" VerticalAlignment="Top" Width="183" Click="Button_Click"/>
     </Grid>
 </Window>
