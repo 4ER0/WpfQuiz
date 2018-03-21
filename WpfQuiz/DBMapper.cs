@@ -24,8 +24,58 @@ namespace WpfQuiz
         /// </summary>
         public DBMapper()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["WpfQuiz.Properties.Settings.WpfQuizConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["QuizDatabase.Properties.Settings.WpfQuizConnectionString"].ConnectionString;
             GetUserByID(0);
+        }
+
+        /// <summary>
+        /// TODO: Register user in die datenbank
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public void AddUser(User user)
+        {
+            string commandString = "INSERT INTO Benutzer(name,passwort,highscore,fragenHistorie)" +
+                " VALUES('"
+                + user.Name + "', '" + user.Password + "', " + user.Highscore + ", '" + user.questionHistoryString + "')";
+            using (connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand = new SqlCommand(commandString);
+                sqlCommand.Connection = connection;
+                var result = sqlCommand.ExecuteNonQuery();
+            }
+        }
+        /// <summary>
+        /// TODO: GetAllThemen
+        /// </summary>
+        /// 
+
+        public List<User> GetUsers()
+        {
+            string selectText = "SELECT * FROM Benutzer";
+            using (connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = connection;
+                sqlCommand.CommandText = selectText;
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                List<User> userList = new List<User>();
+                while (reader.Read())
+                {
+                    userList.Add(new User()
+                    {
+                        Id = Convert.ToInt32(reader[0].ToString()),
+                        Name = reader[1].ToString(),
+                        Password = reader[2].ToString(),
+                        Highscore = Convert.ToInt32(reader[3].ToString()),
+                        questionHistoryString = reader[4].ToString()
+                    });
+                }
+                return userList;
+            }
+            return new List<User>();
         }
 
         /// <summary>

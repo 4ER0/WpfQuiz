@@ -78,11 +78,6 @@
       <DependentUpon>Spiel.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="WpfQuizDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WpfQuizDataSet.xsd</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -127,17 +122,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="WpfQuizDataSet.xsc">
-      <DependentUpon>WpfQuizDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="WpfQuizDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>WpfQuizDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="WpfQuizDataSet.xss">
-      <DependentUpon>WpfQuizDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -155,12 +139,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WpfQuiz.mdf">
+    <Content Include="QuizDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="WpfQuiz_log.ldf">
+    <Content Include="QuizDatabase_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>WpfQuiz.mdf</DependentUpon>
+      <DependentUpon>QuizDatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
