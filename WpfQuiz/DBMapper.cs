@@ -35,11 +35,17 @@ namespace WpfQuiz
         /// <returns></returns>
         public void AddUser(User user)
         {
-            string commandString = "INSERT INTO Benutzer VALUES()";
-
-
+            string commandString = "INSERT INTO Benutzer(name,passwort,highscore,fragenHistorie)" +
+                " VALUES('"
+                + user.Name + "', '" + user.Password + "', " + user.Highscore + ", '" + user.questionHistoryString + "')";
+            using (connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand = new SqlCommand(commandString);
+                sqlCommand.Connection = connection;
+                var result = sqlCommand.ExecuteNonQuery();
+            }
         }
-
         /// <summary>
         /// TODO: GetAllThemen
         /// </summary>
