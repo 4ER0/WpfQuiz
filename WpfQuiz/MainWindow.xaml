@@ -16,9 +16,9 @@
         <Label Content="Anmelden:" HorizontalAlignment="Left" Height="28" Margin="80,78,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
         <Label Content="Registrieren:" HorizontalAlignment="Left" Height="28" Margin="59,78,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
         <Label Content="Benutzername:" HorizontalAlignment="Left" Height="28" Margin="80,111,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Height="24" Margin="80,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="80,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Grid.ColumnSpan="2"/>
         <Label Content="Benutzername:" HorizontalAlignment="Left" Height="28" Margin="59,111,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
-        <TextBlock HorizontalAlignment="Left" Height="24" Margin="59,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Grid.Column="2"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="59,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Grid.Column="2"/>
         <Label Content="Passwort:" HorizontalAlignment="Left" Height="28" Margin="59,173,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
         <Label Content="Passwort:" HorizontalAlignment="Left" Height="28" Margin="80,173,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
         <Label Content="Passwort erneut eingeben:" HorizontalAlignment="Left" Height="28" Margin="59,239,0,0" VerticalAlignment="Top" Width="152" Grid.Column="2"/>

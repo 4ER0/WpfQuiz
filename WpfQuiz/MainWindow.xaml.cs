@@ -26,22 +26,18 @@ namespace WpfQuiz
             InitializeComponent();
         }
 
-        private void testButton_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             DBMapper test1 = new DBMapper();
+
+            var test = test1.GetUsers();
+
+
             var someUser = test1.GetUserByID(0);
             MessageBox.Show(someUser.Id + " " + someUser.Name + " " + someUser.Highscore);
 
             var frage = test1.GetQuestionByID(0);
             MessageBox.Show(frage.fragenText);
-
-
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
