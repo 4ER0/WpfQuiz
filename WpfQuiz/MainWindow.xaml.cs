@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,15 +29,27 @@ namespace WpfQuiz
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            DBMapper dBMapper = new DBMapper();
-
-            User testUser = new User();
-            testUser.Highscore = 0;
-            testUser.Name = "TestDEBUG";
-            testUser.Password = "TestDEBUG";
-            testUser.questionHistoryString = "---";
-
-            dBMapper.AddUser(testUser);
+            DBMapper DBMapper = new DBMapper();
+            DBMapper.GetUser(signInUserName.Text, SHA.HashValue(signInUserPassword.Password));
+            Debug.WriteLine(DBMapper.GetUser(signInUserName.Text, SHA.HashValue(signInUserPassword.Password)).Id);
+        }
+        private void signUp(object sender, RoutedEventArgs e)
+        {
+            if (SHA.HashValue(signUpUserPassword1.Password) == SHA.HashValue(signUpUserPassword2.Password))
+            {
+                DBMapper dbMapper = new DBMapper();
+                dbMapper.AddUser(new User
+                {
+                    Name = signUpUserName.Text,
+                    Password = SHA.HashValue(signUpUserPassword1.Password),
+                    Highscore = 0,
+                    questionHistoryString = "-"
+                });
+            }
+            else
+            {
+                //TODO: ERROR BEI UNTERSCHIEDLICHEN PASSWORT
+            }
         }
     }
 }
