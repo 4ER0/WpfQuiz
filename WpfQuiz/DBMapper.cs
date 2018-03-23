@@ -24,7 +24,7 @@ namespace WpfQuiz
         /// </summary>
         public DBMapper()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["QuizDatabase.Properties.Settings.WpfQuizConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["WpfQuiz.Properties.Settings.QuizDatabaseConnectionString"].ConnectionString;
             GetUserByID(0);
         }
 
@@ -35,16 +35,35 @@ namespace WpfQuiz
         /// <returns></returns>
         public void AddUser(User user)
         {
-            string commandString = "INSERT INTO Benutzer(name,passwort,highscore,fragenHistorie)" +
-                " VALUES('"
-                + user.Name + "', '" + user.Password + "', " + user.Highscore + ", '" + user.questionHistoryString + "')";
+            // INSERT INTO Benutzer (name,passwort,highscore,fragenHistorie) VALUES('test1', 'pw', 0, '-')
+
+            using(connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand cmd = connection.CreateCommand())
+                {
+                    cmd.CommandText = @"INSERT INTO Benutzer (name,passwort,highscore,fragenHistorie)" +
+                                        "VALUES('" + user.Name + "', '" + user.Password + "', " + user.Highscore + ", '" + user.questionHistoryString + "')";
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            /*
+
+
+            string commandString = "INSERT INTO Benutzer (name,passwort,highscore,fragenHistorie)" +
+                "VALUES('" + user.Name + "', '" + user.Password + "', " + user.Highscore + ", '" + user.questionHistoryString + "')";
+
             using (connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 SqlCommand sqlCommand = new SqlCommand(commandString);
                 sqlCommand.Connection = connection;
                 var result = sqlCommand.ExecuteNonQuery();
-            }
+            }*/
+
+
+
         }
         /// <summary>
         /// TODO: GetAllThemen
