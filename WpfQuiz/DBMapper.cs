@@ -94,7 +94,36 @@ namespace WpfQuiz
                 }
                 return userList;
             }
-            return new List<User>();
+        }
+
+        /// <summary>
+        /// Bekommt einen User zurück dessen übergebene ID übereinstimmt
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
+        public User GetUser(string userName, string userPassword)
+        {
+            string selectText = $"SELECT * FROM Benutzer WHERE name like \'{userName}\' AND passwort like \'{userPassword}\'";
+            User loadUser = new User();
+
+            using (connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = connection;
+                sqlCommand.CommandText = selectText;
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    loadUser.Id = Convert.ToInt32(reader[0].ToString());
+                    loadUser.Name = reader[1].ToString();
+                    loadUser.Password = reader[2].ToString();
+                    loadUser.Highscore = Convert.ToInt32(reader[3].ToString());
+                    loadUser.questionHistoryString = reader[4].ToString();
+                    return loadUser;
+                }
+                return new User() { Id = 666, Name = "Error" }; // <-- Falls kein User gefunden werden sollte, einfach einen "User" zurück geben der Error als namen hat (Vorerst!!!)
+            }
         }
 
         /// <summary>
