@@ -74,6 +74,11 @@
     <Compile Include="Quiz.xaml.cs">
       <DependentUpon>Quiz.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QuizDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuizDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Spiel.xaml.cs">
       <DependentUpon>Spiel.xaml</DependentUpon>
     </Compile>
@@ -122,6 +127,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="QuizDatabaseDataSet.xsc">
+      <DependentUpon>QuizDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuizDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuizDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuizDatabaseDataSet.xss">
+      <DependentUpon>QuizDatabaseDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -140,10 +156,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="QuizDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="QuizDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>QuizDatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
