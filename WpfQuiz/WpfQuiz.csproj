@@ -79,6 +79,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuizDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SHA.cs" />
     <Compile Include="Spiel.xaml.cs">
       <DependentUpon>Spiel.xaml</DependentUpon>
     </Compile>
