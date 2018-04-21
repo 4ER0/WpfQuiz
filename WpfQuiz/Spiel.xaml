@@ -8,7 +8,7 @@
         Title="Spiel" Height="418.786" Width="736.272">
     <Grid Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}">
         <Label Content="Willkommen zum Quiz!" HorizontalAlignment="Left" Height="50" Margin="257,30,0,0" VerticalAlignment="Top" Width="228" FontSize="20"/>
-        <Button Content="Spielen" HorizontalAlignment="Left" Height="41" Margin="129,159,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Content="Spielen" HorizontalAlignment="Left" Height="41" Margin="129,159,0,0" VerticalAlignment="Top" Width="200" Click="startGame"/>
         <Button Content="Einstellungen" HorizontalAlignment="Left" Height="41" Margin="440,159,0,0" VerticalAlignment="Top" Width="200"/>
         <Button Content="Beeneden" HorizontalAlignment="Left" Height="41" Margin="285,229,0,0" VerticalAlignment="Top" Width="200"/>
 

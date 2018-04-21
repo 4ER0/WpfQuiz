@@ -19,9 +19,15 @@ namespace WpfQuiz
     /// </summary>
     public partial class Spiel : Window
     {
-        public Spiel()
+        public Spiel(User user)
         {
             InitializeComponent();
+        }
+
+        private void startGame(object sender, RoutedEventArgs e)
+        {
+            new Quiz().Show();
+            Close();
         }
     }
 }

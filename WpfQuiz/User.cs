@@ -9,7 +9,7 @@ namespace WpfQuiz
     /// <summary>
     /// Beinhaltet einen User aus der Datenbank
     /// </summary>
-    class User
+    public class User
     {
         public int Id { get; set; }
         public string Name { get; set; }

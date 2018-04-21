@@ -25,7 +25,7 @@
         <PasswordBox x:Name="signInUserPassword" HorizontalAlignment="Left" Height="19" Margin="80,206,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
         <PasswordBox x:Name="signUpUserPassword1" HorizontalAlignment="Left" Height="19" Margin="59,267,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
         <PasswordBox x:Name="signUpUserPassword2" HorizontalAlignment="Left" Height="19" Margin="59,206,0,0" VerticalAlignment="Top" Width="125" Grid.Column="2"/>
-        <Button Grid.ColumnSpan="3" Content="Anmelden" HorizontalAlignment="Left" Height="32" Margin="100,328,0,0" VerticalAlignment="Top" Width="183" Click="Button_Click"/>
+        <Button Grid.ColumnSpan="3" Content="Anmelden" HorizontalAlignment="Left" Height="32" Margin="100,328,0,0" VerticalAlignment="Top" Width="183" Click="signIn"/>
         <Button Grid.ColumnSpan="3" Content="Registrieren" HorizontalAlignment="Left" Height="32" Margin="200,328,0,0" VerticalAlignment="Top" Width="183" Click="signUp"/>
     </Grid>
 </Window>

@@ -27,11 +27,16 @@ namespace WpfQuiz
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void signIn(object sender, RoutedEventArgs e)
         {
             DBMapper DBMapper = new DBMapper();
-            DBMapper.GetUser(signInUserName.Text, SHA.HashValue(signInUserPassword.Password));
-            Debug.WriteLine(DBMapper.GetUser(signInUserName.Text, SHA.HashValue(signInUserPassword.Password)).Id);
+            User user = DBMapper.GetUser(signInUserName.Text, SHA.HashValue(signInUserPassword.Password));
+            Debug.WriteLine(user.Id);
+            if (user.Id != 666)
+            {
+                new Spiel(user).Show();
+                Close(); 
+            }
         }
         private void signUp(object sender, RoutedEventArgs e)
         {
